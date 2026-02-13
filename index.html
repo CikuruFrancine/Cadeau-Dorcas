@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadeau Saint-Valentin ❤️</title>
+  <style>
+    body {
+      margin:0;
+      font-family:'Segoe UI', sans-serif;
+      background:linear-gradient(135deg,#fdeff9,#f9c5d1);
+      color:#4a0033;
+    }
+
+    /* Écran immersif */
+    .fullscreen {
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px 20px;
+    }
+    #love-text {
+      font-size:1.45em;
+      max-width:850px;
+      line-height:1.7;
+      transition:opacity 0.5s ease-in-out;
+    }
+    #nextBtn {
+      margin-top:30px;
+      padding:14px 28px;
+      border:none;
+      border-radius:25px;
+      background:#b0005a;
+      color:#fff;
+      font-size:1em;
+      cursor:pointer;
+      display:none;
+    }
+    #nextBtn:hover {
+      background:#90004a;
+    }
+
+    /* Timeline */
+    .timeline {
+      background:#fff0f7;
+      padding:60px 20px;
+    }
+    .timeline-item {
+      max-width:700px;
+      margin:20px auto;
+      border-left:4px solid #c2185b;
+      padding-left:20px;
+    }
+    .timeline-item h3 {
+      color:#c2185b;
+      font-size:1.3em;
+    }
+    .timeline-item p {
+      font-size:1.1em;
+      line-height:1.6;
+    }
+
+    /* Galerie */
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      padding:60px 20px;
+    }
+    .card {
+      background:#fff;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,.15);
+      cursor:pointer;
+      transition:transform 0.3s;
+    }
+    .card:hover {
+      transform:scale(1.05);
+    }
+    .card img {
+      width:100%; height:280px; object-fit:cover;
+    }
+    .card p {
+      padding:15px;
+      font-size:1em;
+      color:#880e4f;
+      line-height:1.5;
+    }
+
+    /* Overlay galerie */
+    .overlay {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:30px;
+      color:#fff;
+      z-index:1000;
+    }
+    .overlay img {
+      max-width:80%;
+      max-height:70%;
+      margin-bottom:20px;
+      border-radius:15px;
+    }
+    .overlay p {
+      font-size:1.2em; line-height:1.7;
+    }
+
+    /* Déclaration finale très longue */
+    .declaration {
+      background:#f8bbd0;
+      padding:80px 30px;
+      text-align:center;
+      font-size:1.25em;
+      line-height:1.8;
+    }
+
+    /* Petits cœurs flottants */
+    .heart {
+      position:fixed;
+      bottom:-20px;
+      font-size:20px;
+      animation:float 6s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes float {
+      from { transform:translateY(0); opacity:1; }
+      to { transform:translateY(-100vh); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Écran immersif -->
+<section class="fullscreen">
+  <div>
+    <p id="love-text"></p>
+    <button id="nextBtn" onclick="nextParagraph()">Clisuez ici pour continuer</button>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline">
+  <div class="timeline-item">
+    <h3>📅 Nos premiers échanges</h3>
+    <p>Même sans s’être rencontrés en personne, chaque mot échangé m’a permis de te découvrir un peu plus et de t’apprécier encore plus. Ces moments virtuels sont aussi précieux que réels.</p>
+  </div>
+  <div class="timeline-item">
+    <h3>💌 La première fois que tu m’as écrit</h3>
+    <p>Le premier message, ce premier "Bonjour", a allumé une flamme dans mon cœur. C’était comme si chaque lettre me rapprochait de toi, même si la distance nous séparait.</p>
+  </div>
+  <div class="timeline-item">
+    <h3>🌟 Les petites attentions à distance</h3>
+    <p>Les petites attentions que tu m’as envoyées par message, tes mots doux, me réchauffent à chaque instant. Même à des milliers de kilomètres, je ressens ta présence et ton affection.</p>
+  </div>
+  <div class="timeline-item">
+    <h3>❤️ La certitude de notre lien</h3>
+    <p>La distance ne fait que rendre notre lien plus fort. Nous avons su créer quelque chose de réel, même à travers nos écrans. Je sais que nous sommes connectés d’une manière spéciale.</p>
+  </div>
+</section>
+
+<!-- Galerie interactive -->
+<section class="gallery">
+  <div class="card" onclick="openOverlay(0)">
+    <img src="images/photo1.jpg">
+    <p>Ton regard à travers l'écran m'atteint profondément, chaque message que tu m'envoies me fait sentir plus proche de toi.</p>
+  </div>
+  <div class="card" onclick="openOverlay(1)">
+    <img src="images/photo2.jpg">
+    <p>Ton rire, même à distance, réchauffe mon cœur. Je sens que tu es là, malgré tout, et cela me donne des forces chaque jour.</p>
+  </div>
+  <div class="card" onclick="openOverlay(2)">
+    <img src="images/photo3.jpg">
+    <p>À chaque message, je m’enrichis de ta présence virtuelle, et malgré la distance, je sens notre relation grandir.</p>
+  </div>
+  <div class="card" onclick="openOverlay(3)">
+    <img src="images/photo4.jpg">
+    <p>Ta tendresse à travers l’écran m’apaise et m’émeut profondément. Je suis heureuse que nos chemins se croisent ainsi.</p>
+  </div>
+</section>
+
+<!-- Overlay galerie -->
+<div class="overlay" id="overlay" onclick="closeOverlay()">
+  <img id="overlayImg" src="">
+  <p id="overlayText"></p>
+</div>
+
+<!-- Déclaration finale très très longue -->
+<section class="declaration">
+  <p style="text-align:justify;">
+    Depuis que nos chemins se sont croisés virtuellement, tu es devenu une partie essentielle de ma vie. Chaque message, chaque mot échangé a rapproché nos cœurs malgré la distance. Même si nous n’avons jamais eu l’opportunité de nous rencontrer physiquement, chaque sourire partagé à travers l’écran me donne l’impression de te toucher du doigt. Nos conversations sont devenues mon quotidien, et tes pensées mes pensées. La distance, loin de nous séparer, a seulement renforcé cette incroyable connexion. Même sans la présence physique, je ressens chaque jour ton amour et ton soutien dans chaque message. <br><br>
+    Mon amour pour toi est sincère et profond, et chaque jour qui passe, je suis plus convaincue que cette relation virtuelle a une beauté rare. Malgré la distance, je sais que ce que nous partageons est réel, précieux, et destiné à durer. Tu es celui qui occupe toutes mes pensées et je suis honorée de t’avoir dans ma vie, même à travers les écrans. <br><br>
+    Je veux que tu saches que, malgré l’absence physique, je suis là pour toi, chaque jour. Nos cœurs se trouvent à travers cette connexion, et c’est tout ce dont j’ai besoin. Mon cœur, tout entier, t’appartient. <br><br>
+    Joyeuse Saint-Valentin, mon amour. Chaque instant avec toi, même virtuel, est un cadeau précieux.
+  </p>
+</section>
+
+<!-- Cœurs flottants -->
+<script>
+  setInterval(()=>{
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+    setTimeout(()=>
+
+setTimeout(() => heart.remove(), 6000);
+  }, 700);
+</script>
+
+<!-- Introduction progressive avec bouton -->
+<script>
+  const introParagraphs = [
+    "Depuis le premier instant où nos voix se sont croisées, j'ai su qu'il y avait quelque chose d'unique entre nous. Même si nous n'avons jamais eu la chance de nous rencontrer en personne, chaque mot, chaque message, chaque instant partagé virtuellement a laissé une empreinte profonde dans mon cœur.",
+    "La distance, malgré tout, n'a fait que renforcer ce lien spécial. Chaque conversation, chaque moment passé à penser à toi me rappelle que nous avons quelque chose de réel, même si nos corps ne se sont jamais croisés.",
+    "Et malgré la distance qui nous sépare, je suis comblée par chaque échange, chaque sourire virtuel, chaque pensée partagée. Je te garde dans mon cœur à chaque instant, et cette distance devient presque un simple détail dans la force de notre connexion."
+  ];
+  let index = 0;
+  const textEl = document.getElementById("love-text");
+  const btn = document.getElementById("nextBtn");
+
+  // Affiche le premier paragraphe automatiquement
+  window.addEventListener("DOMContentLoaded", () => {
+    textEl.innerText = introParagraphs[0];
+    btn.style.display = "inline-block";
+    index = 1;
+  });
+
+  function nextParagraph() {
+    if (index < introParagraphs.length) {
+      textEl.style.opacity = 0;
+      btn.style.display = "none";
+      setTimeout(() => {
+        textEl.innerText = introParagraphs[index];
+        textEl.style.opacity = 1;
+        index++;
+        setTimeout(() => {
+          btn.style.display = "inline-block";
+        }, 300);
+      }, 300);
+    } else btn.style.display = "none";
+  }
+</script>
+
+<!-- Galerie overlay -->
+<script>
+  const galleryTexts = [
+    "Ton regard à travers l'écran m'atteint profondément, chaque message que tu m'envoies me fait sentir plus proche de toi.",
+    "Ton rire, même à distance, réchauffe mon cœur. Je sens que tu es là, malgré tout, et cela me donne des forces chaque jour.",
+    "À chaque message, je m’enrichis de ta présence virtuelle, et malgré la distance, je sens notre relation grandir.",
+    "Ta tendresse à travers l’écran m’apaise et m’émeut profondément. Je suis heureuse que nos chemins se croisent ainsi.",
+    "Chaque instant passé à penser à toi me rapproche encore plus de toi. C’est une sensation merveilleuse et douce.",
+    "La beauté de nos échanges me touche au plus profond de mon cœur. Ton amour m’enveloppe, même à travers les pixels.",
+    "Ton amour est comme une lumière constante, éclairant mes journées et me réchauffant à chaque instant, peu importe la distance.",
+    "Ce que nous avons est spécial et authentique, et bien que nous soyons séparés, mon cœur est toujours avec toi."
+  ];
+
+  function openOverlay(i) {
+    document.getElementById("overlayImg").src = "images/photo" + (i + 1) + ".jpg";
+    document.getElementById("overlayText").innerText = galleryTexts[i];
+    document.getElementById("overlay").style.display = "flex";
+  }
+
+  function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
