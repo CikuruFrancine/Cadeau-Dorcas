@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cadeau Saint-Valentin ❤️</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body{
   margin:0;
@@ -39,9 +39,9 @@ body{
   padding:30px;
 }
 #love-text{
-  font-size:1.4em;
+  font-size:1.2em;
   max-width:850px;
-  line-height:1.7;
+  line-height:1.6;
   transition:opacity .4s;
 }
 #nextBtn{
@@ -67,7 +67,7 @@ body{
   padding-left:20px;
 }
 .timeline-item h3{color:#c2185b}
-.timeline-item p{line-height:1.6}
+.timeline-item p{line-height:1.5}
 
 /* Galerie */
 .gallery{
@@ -115,21 +115,62 @@ body{
   margin-bottom:20px;
 }
 
-/* Déclaration */
+/* Déclaration finale */
 .declaration{
   background:#f8bbd0;
-  padding:80px 30px;
-  font-size:1.2em;
-  line-height:1.8;
+  padding:60px 25px;
+  font-size:1em;
+  line-height:1.6;
+}
+
+/* Acrostiche */
+#acrostiche-section{
+  background: #ffd6e8;
+  padding: 35px 25px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  font-family: 'Dancing Script', cursive;
+}
+#acrostiche-text{
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #4a0033;
+  text-align: justify;
+  margin-top: 20px;
+}
+#acrosticheBtn{
+  font-family: 'Dancing Script', cursive;
+  font-size: 1em;
+  padding: 12px 28px;
+  background: #b0005a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#acrosticheBtn:hover{
+  background: #90004a;
+}
+
+/* Message final */
+#final-message{
+  text-align:center; 
+  font-size:1.4em; 
+  color:#b0005a; 
+  margin-top:30px; 
+  font-weight:bold;
+  display:none;
 }
 </style>
 </head>
-
 <body>
 
 <!-- Musique -->
 <audio id="bg-music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/10/09/audio_1f2b7b7e5b.mp3">
+  <source src="audios/audio.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn" onclick="toggleMusic()">🔈 Activer la musique</button>
 
@@ -137,7 +178,7 @@ body{
 <section class="fullscreen">
   <div>
     <p id="love-text"></p>
-    <button id="nextBtn" onclick="nextParagraph()">Continuer</button>
+    <button id="nextBtn" onclick="nextParagraph()">Cliques pour ici pour continuer My Darmy</button>
   </div>
 </section>
 
@@ -145,32 +186,32 @@ body{
 <section class="timeline">
   <div class="timeline-item">
     <h3>📱 Le premier message</h3>
-    <p>Tout a commencé simplement, par des mots échangés, sans attentes, sans pression.</p>
+    <p>Tout a commencé simplement, par des mots échangés, sans attentes, sans pression. Une étincelle douce et sincère s’est glissée entre nous.</p>
   </div>
   <div class="timeline-item">
-    <h3>💬 Les conversations sincères</h3>
-    <p>Chaque discussion a construit une proximité douce, calme et rassurante.</p>
+    <h3>💬 Nos conversations sincères</h3>
+    <p>Chaque message a construit un espace intime et tendre. Même à distance, chaque mot était une caresse, une preuve de ton attention et de ta douceur.</p>
   </div>
   <div class="timeline-item">
-    <h3>🌙 La présence à distance</h3>
-    <p>Sans se voir, sans se toucher, une connexion réelle s’est installée.</p>
+    <h3>🌙 La présence invisible</h3>
+    <p>Sans jamais nous rencontrer, nous avons créé un monde où tes mots me réconfortent, où ta présence se fait sentir dans chaque pensée.</p>
   </div>
   <div class="timeline-item">
-    <h3>❤️ Un lien qui compte</h3>
-    <p>Ce que nous partageons existe, tout simplement.</p>
+    <h3>❤️ Un lien rare</h3>
+    <p>Ce que nous partageons est précieux, sincère et rare. Même invisible aux yeux du monde, il existe et illumine nos cœurs.</p>
   </div>
 </section>
 
 <!-- GALERIE -->
 <section class="gallery">
-  <div class="card" onclick="openOverlay(0)"><img src="images/photo1.jpg"><p>Une présence douce, même à distance.</p></div>
-  <div class="card" onclick="openOverlay(1)"><img src="images/photo2.jpg"><p>Des mots qui apaisent.</p></div>
-  <div class="card" onclick="openOverlay(2)"><img src="images/photo3.jpg"><p>Une connexion sincère.</p></div>
-  <div class="card" onclick="openOverlay(3)"><img src="images/photo4.jpg"><p>Une attention discrète.</p></div>
-  <div class="card" onclick="openOverlay(4)"><img src="images/photo5.jpg"><p>Un lien qui grandit.</p></div>
-  <div class="card" onclick="openOverlay(5)"><img src="images/photo6.jpg"><p>Une douceur constante.</p></div>
-  <div class="card" onclick="openOverlay(6)"><img src="images/photo7.jpg"><p>Une présence rassurante.</p></div>
-  <div class="card" onclick="openOverlay(7)"><img src="images/photo8.jpg"><p>Quelque chose de vrai.</p></div>
+  <div class="card" onclick="openOverlay(0)"><img src="images/photo1.jpg"><p>Une présence douce, même à distance, qui me réchauffe le cœur et illumine mes pensées.</p></div>
+  <div class="card" onclick="openOverlay(1)"><img src="images/photo2.jpg"><p>Ton sourire virtuel m’apporte une tendresse qui traverse l’écran et résonne dans mon âme.</p></div>
+  <div class="card" onclick="openOverlay(2)"><img src="images/photo3.jpg"><p>Chaque mot que tu écris est un souffle doux, une mélodie qui apaise mes nuits et réchauffe mes journées.</p></div>
+  <div class="card" onclick="openOverlay(3)"><img src="images/photo4.jpg"><p>Ton attention invisible se transforme en lumière, illuminant les instants les plus simples et les plus précieux.</p></div>
+  <div class="card" onclick="openOverlay(4)"><img src="images/photo5.jpg"><p>Ta patience et ton amour discret sont des trésors rares, que je garde précieusement dans mon cœur.</p></div>
+  <div class="card" onclick="openOverlay(5)"><img src="images/photo6.jpg"><p>Chaque geste, chaque mot me rappelle combien notre lien est unique et précieux, malgré la distance.</p></div>
+  <div class="card" onclick="openOverlay(6)"><img src="images/photo7.jpg"><p>Ton amour silencieux illumine mes journées, apaise mes nuits et fait battre mon cœur plus fort.</p></div>
+  <div class="card" onclick="openOverlay(7)"><img src="images/photo8.jpg"><p>Ce que nous partageons est un fil précieux, délicat mais fort, qui relie nos âmes avec douceur.</p></div>
 </section>
 
 <!-- OVERLAY -->
@@ -179,30 +220,38 @@ body{
   <p id="overlayText"></p>
 </div>
 
-<!-- DÉCLARATION -->
+<!-- DÉCLARATION FINALE -->
 <section class="declaration">
 <p style="text-align:justify;">
-Il y a des liens qui ne naissent pas dans les regards, mais dans la sincérité des mots. Le nôtre s’est construit doucement, sans précipitation, sans promesse excessive. Il s’est simplement installé, avec calme et vérité.
+Depuis le tout premier instant où nos mots se sont croisés, mon cœur s’est doucement épris de toi, de ton essence invisible mais pourtant si présente. <br> Chaque message que tu m’adresses devient un souffle délicat, une caresse que je ressens jusqu’au plus profond de mon être. Même séparés par des kilomètres, je sens ta chaleur, ta douceur et cette attention qui me touche avec une intensité rare.
 
-Même sans rencontre physique, j’ai appris à te reconnaître, à ressentir ta présence, à apprécier ce que nous partageons. Ce lien est devenu un espace sûr, respectueux, apaisant.  
+<br>  <br>Il y a quelque chose de magique dans notre lien : il est silencieux et pourtant vibrant, discret et pourtant profond. <br>Je chéris chaque instant partagé à travers nos mots, chaque sourire que tu fais naître au détour d’une phrase, chaque émotion qui fait frémir mon cœur.<br> Ton affection, même à distance, est une lumière qui éclaire mes journées et apaise mes nuits.
 
-En ce jour particulier, je voulais te laisser une trace douce, un moment, un souvenir.  
-Simplement pour te dire que ce lien compte, sincèrement.
+<br><br>J’aime imaginer ton sourire, entendre ta voix dans mes pensées, sentir ton attention dans chaque mot écrit. <br>Chaque message que nous partageons est un fil précieux qui relie nos âmes, et je le garde précieusement comme un trésor secret et lumineux.
 
-Joyeuse Saint-Valentin.
+<br><br>Je veux que tu saches que ce lien que nous avons tissé est unique, rare et sincère.<br> À travers ces mots, ces images et cette attention partagée, je t’offre une partie de moi, une preuve de mon affection profonde et de mon amour silencieux mais véritable.  
 </p>
 </section>
 
+<!-- BOUTON ACROSTICHE -->
+<section class="declaration" id="acrostiche-section" style="text-align:center;">
+  <button id="acrosticheBtn">Cliques ici, mon amour💖</button>
+  <p id="acrostiche-text" style="margin-top:25px; display:none;"></p>
+  <p id="final-message">Joyeux Saint-Valentin Mon Alter ago 💖</p>
+</section>
+
 <script>
-/* Intro */
+/* INTRODUCTION PROGRESSIVE */
 const introParagraphs=[
-"Certaines connexions naissent sans se voir.",
-"À travers les mots, une présence s’installe.",
-"Ce que nous partageons existe réellement."
+"Depuis le premier instant où nos mots se sont croisés, j’ai senti qu’un lien invisible mais puissant se tisser entre nous. Chaque message devient un fil de chaleur reliant nos cœurs malgré la distance.",
+"À travers les silences et les instants partagés virtuellement, je ressens ton attention, ta tendresse et cette douceur qui me touche profondément.",
+"Chaque jour, chaque mot échangé me rapproche de toi. Ce lien que nous partageons est rare, sincère et précieux, et je veux que tu saches que mon cœur t’accompagne à chaque instant."
 ];
 let i=0;
 const textEl=document.getElementById("love-text");
 const btn=document.getElementById("nextBtn");
+const music=document.getElementById("bg-music");
+let playing=false;
 
 window.onload=()=>{
   textEl.innerText=introParagraphs[0];
@@ -210,7 +259,9 @@ window.onload=()=>{
   i=1;
 };
 
+/* Défilement des paragraphes */
 function nextParagraph(){
+  if(!playing){ music.play(); playing=true; } // musique au premier clic
   if(i<introParagraphs.length){
     textEl.style.opacity=0;
     setTimeout(()=>{
@@ -220,16 +271,16 @@ function nextParagraph(){
   }else btn.style.display="none";
 }
 
-/* Galerie */
+/* GALERIE */
 const galleryTexts=[
-"Une présence qui rassure.",
-"Des mots sincères.",
-"Une douceur réelle.",
-"Une attention vraie.",
-"Un lien fragile mais fort.",
-"Une chaleur discrète.",
-"Une connexion rare.",
-"Quelque chose de précieux."
+"Une présence douce, même à distance, qui me réchauffe le cœur et illumine mes pensées.",
+"Ton sourire virtuel m’apporte une tendresse qui traverse l’écran et résonne dans mon âme.",
+"Chaque mot que tu écris est un souffle doux, une mélodie qui apaise mes nuits et réchauffe mes journées.",
+"Ton attention invisible se transforme en lumière, illuminant les instants les plus simples et les plus précieux.",
+"Ta patience et ton amour discret sont des trésors rares, que je garde précieusement dans mon cœur.",
+"Chaque geste, chaque mot me rappelle combien notre lien est unique et précieux, malgré la distance.",
+"Ton amour silencieux illumine mes journées, apaise mes nuits et fait battre mon cœur plus fort.",
+"Ce que nous partageons est un fil précieux, délicat mais fort, qui relie nos âmes avec douceur."
 ];
 
 function openOverlay(n){
@@ -241,15 +292,50 @@ function closeOverlay(){
   document.getElementById("overlay").style.display="none";
 }
 
-/* Musique */
-const music=document.getElementById("bg-music");
-let playing=false;
+/* MUSIQUE */
+const musicBtn=document.getElementById("musicBtn");
 function toggleMusic(){
-  if(!playing){music.play();musicBtn.innerText="🔊 Musique en cours";}
-  else{music.pause();musicBtn.innerText="🔈 Activer la musique";}
-  playing=!playing;
+  if(!playing){music.play(); musicBtn.innerText="🔊 Musique en cours"; playing=true;}
+  else{music.pause(); musicBtn.innerText="🔈 Activer la musique"; playing=false;}
 }
-</script>
 
+/* ACROSTICHE */
+const acrosticheLines = [
+"D – Depuis le premier instant, ton amour m’enchante et me transforme.",
+"A – Avec toi, chaque jour devient une danse douce de tendresse.",
+"R – Reconnaissante pour chaque sourire que tu fais naître dans mon cœur.",
+"M – Mon admiration pour toi grandit avec chaque pensée, chaque message.",
+"Y – Y’a pas un instant où je ne ressens pas la chaleur de ton affection.",
+"M – Merci pour ton attention, pour ta patience et ta constance.",
+"E – En toi, j’ai trouvé une lumière qui éclaire mes journées.",
+"R – Rien ne peut remplacer la douceur de ton amour, même à distance.",
+"V – Véritablement, je t’aime avec toute la sincérité de mon cœur.",
+"E – Et chaque moment partagé par nos mots devient un trésor.",
+"I – Immense est la gratitude que je ressens pour ton affection.",
+"L – L’amour que tu m’offres est un cadeau précieux que je chéris.",
+"L – La tendresse que tu inspires rend ma vie plus merveilleuse.",// Correction
+"E – Et Chaque instant avec toi rend ma vie merveilleuse et complète."
+  ];
+
+const acrosticheTextEl=document.getElementById("acrostiche-text");
+const acrosticheBtn=document.getElementById("acrosticheBtn");
+const finalMsg=document.getElementById("final-message");
+
+acrosticheBtn.addEventListener("click",()=>{
+  acrosticheBtn.style.display="none";
+  acrosticheTextEl.style.display="block";
+  let j=0;
+  function showLine(){
+    if(j<acrosticheLines.length){
+      acrosticheTextEl.innerHTML+=acrosticheLines[j]+"<br><br>";
+      j++;
+      setTimeout(showLine,1200);
+    } else {
+      finalMsg.style.display="block"; // Affiche le message final
+    }
+  }
+  showLine();
+});
+</script>
 </body>
-</html>
+  </html>
